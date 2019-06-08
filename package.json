@@ -1,0 +1,83 @@
+{
+  "name": "scarlet-reader",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A manga viewer with dynamic loading based on Vue",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dist": "vue-cli-service build --target wc --name scarlet-reader ./src/index.js",
+    "dist:webpack": "rm -rf ./dist && webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "lodash": "^4.17.11",
+    "tween.js": "^16.6.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "file-loader": "^3.0.1",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "eslintIgnore": [
+    "dist/*"
+  ],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "manga",
+    "reader",
+    "viewer",
+    "virtual scroller",
+    "vue"
+  ],
+  "main": "./dist/index.js"
+}
