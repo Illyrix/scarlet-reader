@@ -36,8 +36,8 @@ export default {
     },
     listSize () {
       return {
-        height: this.options.height ? this.options.height : this.$props.height ? this.$props.height : '600px',
-        width: this.options.width ? this.options.width : this.$props.width ? this.$props.width : '400px'
+        height: this.options.height ? this.options.height : (this.$props.height ? this.$props.height : '600px'),
+        width: this.options.width ? this.options.width : (this.$props.width ? this.$props.width : '400px')
       }
     },
     listClasses () {
@@ -229,10 +229,14 @@ export default {
   align-items: center;
   background-color: lightgrey;
   margin: auto;
+  /* for Firefox */
+  scrollbar-width: none;
 }
+/* for Chrome */
 .sc-reader-item-list::-webkit-scrollbar{
-  display:none;
+  display: none;
 }
+
 
 .sc-reader-direct-vertical {
   flex-direction: column;

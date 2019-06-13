@@ -1,6 +1,8 @@
 <template>
   <div class="demo-app">
+    <button @click="$refs.slider.prev()">prev</button>
     <button @click="$refs.slider.slideTo(Math.floor(Math.random() * items.length))">Slide to rand</button>
+    <button @click="$refs.slider.next()">next</button>
     <ReaderSlider ref="slider" :options="options" :items="items">
       <template v-slot:item="{ item, index, active }">
         <ReaderItem :index="index" :active="active">
@@ -32,7 +34,11 @@ export default {
   data () {
     const items = []
     for (let i = 1; i <= 34; i++) {
-      items.push({ id: i, src: `/static/test/${i}.jpg` })
+      if (i < 10) {
+        items.push({ id: i, src: `/static/test/0${i}.jpg` })
+      } else {
+        items.push({ id: i, src: `/static/test/${i}.jpg` })
+      }
     }
     return {
       items,

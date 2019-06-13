@@ -102,10 +102,16 @@ export default {
       }
       const latest = this.current
       this.current = index
-      if (this.options.virtual) {
-        this.$refs.vscroller.slideTo(this.current)
-      } else {
-        this.$refs.scroller.slideTo(this.current)
+      try {
+        if (this.options.virtual) {
+          this.$refs.vscroller.slideTo(this.current)
+        } else {
+          this.$refs.scroller.slideTo(this.current)
+        }
+      } catch (e) {
+        // restore current
+        this.current = latest
+        throw e
       }
       this.$emit('slide-to', latest, this.current)
     },

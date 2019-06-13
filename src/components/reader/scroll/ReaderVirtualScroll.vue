@@ -70,7 +70,11 @@ export default {
       this.$emit('item-selected', $ev)
     },
     slideTo (idx) {
-      throw new Error(`[Scarlet-Reader] slideTo method is not support on virtual scroller`)
+      // check whether slideTo() invoked by prev() or next()
+      if (Math.abs(idx - this.current) > 1) {
+        // because it's hard to pre-load image far away from current index
+        throw new Error(`[Scarlet-Reader] slideTo method is not support on virtual scroller`)
+      }
       // uninterrupt animation
       if (this.$refs.wrapper.slideToPos(this.getPostionByIdx(idx), true)) {
         this.isSlidingTo = true

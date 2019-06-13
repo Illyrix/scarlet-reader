@@ -1,5 +1,8 @@
 {
   "name": "scarlet-reader",
+  "author": {
+    "name" : "Illyrix"
+  },
   "version": "0.1.0",
   "private": false,
   "description": "A manga viewer with dynamic loading based on Vue",
@@ -10,6 +13,10 @@
     "lint": "vue-cli-service lint",
     "dist": "vue-cli-service build --target wc --name scarlet-reader ./src/index.js",
     "dist:webpack": "rm -rf ./dist && webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Illyrix/scarlet-reader.git"
   },
   "dependencies": {
     "core-js": "^2.6.5",
