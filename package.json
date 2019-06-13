@@ -3,7 +3,7 @@
   "author": {
     "name" : "Illyrix"
   },
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "A manga viewer with dynamic loading based on Vue",
   "license": "MIT",

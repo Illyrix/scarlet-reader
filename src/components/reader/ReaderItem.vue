@@ -7,7 +7,6 @@
     @dragstart="dragStart($event)"
     >
       <template v-if="active">
-        <p>active: {{ active }}</p>
         <slot></slot>
         <div v-if="options.loading" class="sc-reader-loading">
           <slot name="loading"></slot>
